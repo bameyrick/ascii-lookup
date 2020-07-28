@@ -1035,4 +1035,9 @@ describe('getASCIIItemForDecimal()', () => {
     it(`255's result is correct`, () =>
       expect(getASCIIItemForDecimal(255, ASCIIEncoding.UTF8)).toEqual({ dec: 255, hex: 'FF', html: '&#255;', char: 'ÿ' }));
   });
+
+  describe('ISO Extended Codes', () => {
+    it(`128's result is correct`, () =>
+      expect(getASCIIItemForDecimal(128, ASCIIEncoding.ISO88591)).toEqual({ dec: 128, hex: '80', html: '', char: '€' }));
+  });
 });

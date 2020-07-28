@@ -5,21 +5,44 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "description": "Get ASCII characters, html codes, hex codes, and decimal codes for different encodings via decimal code or hex code.",
+  "keywords": [
+    "ASCII",
+    "decimal",
+    "hex",
+    "html code",
+    "character",
+    "CP437",
+    "ISO",
+    "UTF-8",
+    "UTF8",
+    "table",
+    "lookup"
+  ],
   "scripts": {
-    "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
-    "lint": "tslint --project tsconfig.json",
+    "build": "yarn lint && tsc -p tsconfig.json --outDir dist/",
+    "lint": "yarn tidy-clean && yarn tslint --project tsconfig.lint.json",
     "test": "KARMA_SINGLE_RUN=false karma start ./karma.conf.js",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "test-single": "yarn tidy-clean && yarn karma start ./karma.conf.js",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "tidy-clean": "rm -rf dist coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bameyrick/ascii-lookup.git"
   },
   "lint-staged": {
     "*.ts": [
       "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma  es5 --parser typescript --write",
-      "tslint --project tsconfig.json",
-      "karma start ./karma.conf.js",
-      "git add"
+      "tslint --project tsconfig.lint.json",
+      "karma start ./karma.conf.js"
     ],
-    "*.js": ["prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write", "git add"],
-    "*.json": ["prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write", "git add"]
+    "*.js": [
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write"
+    ],
+    "*.json": [
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write"
+    ]
   },
   "husky": {
     "hooks": {
@@ -28,6 +51,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
+    "codecov": "^3.7.2",
     "husky": "^4.2.5",
     "jasmine-core": "^3.6.0",
     "karma": "^5.1.0",

@@ -24,11 +24,12 @@ module.exports = function (config) {
     },
 
     coverageIstanbulReporter: {
-      reports: ['html', 'karma-typescript', 'lcovonly'],
+      reports: ['text', 'lcovonly'],
       fixWebpackSourcePaths: true,
+      dir: 'coverage',
     },
 
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

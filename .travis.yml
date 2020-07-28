@@ -5,6 +5,8 @@ node_js:
 cache: yarn
 jobs:
   include:
+    - stage: test
+      script: yarn test-single && codecov
     - stage: npm-bundle
       script: yarn build && npm version $TRAVIS_BRANCH --allow-same-version --allow-empty
       deploy:
@@ -12,9 +14,11 @@ jobs:
         provider: npm
         email: bameyrick@gmail.com
         api_token:
-          secure: XZ1q1761D87gQZ//7pAtPExtLRxHNOt8Jjr/CzckXCfQV+v+IOyYhVv0tMU+8vuGdjAHJDc0CinQzY8SnU8TYT6C+/TAvyh4FxmBWHUxfnPVZWeY9y/3txGsCFI2kfEpiYWZtCRAovea7BNSKnYZZAeWT8ukde8u0jFRaGpcne3x9rGm5hKwB4o/OIuihQr+lHNzE5aJIy0EvZG0t5fYwLLgDvUjDXvv4W9OUa5hIBLMxyTxIE40AxZ8MS1uQ246z6IF0lopKeha9OI8gk+cYZ7WUgIQM2txTsUdm+rlHObvWIL5H9EZZd3BV8PpFCrS4PRSIpRaLWdltfJapBDFw/O0F9O+NBumJjrtfAiY/yS+CxxjI1ysX+yBpH2tcOReX1EaF3Oz+k6hav57Uw9nvHcSNESgv6biGSBEL3DznqlCu0cR5x54r+XzS52x2ALpiEFW69uBkrQ/4Pqccu4Ok/QQjWS4I5NOhuYjSeBKcPeyPIJ1Kw9+J8A75xGrxA0kgAZ9QoY4QL16dExGy9EL148v8D2ce+h1N160vgP+5ZWV2nvN1vTFQZwq5TNlHdkRuUh5J+IvQQf/yeKeiAVXO4FSQG+JJPYD1obqpTDjHQzNjk2YA54en9JdnCnzXNCq3gPrTyOW0TBkcF6LRB4vsHWqu7/QEz1JGA3jOlRPs1s=
+          secure: Z0aW1e0Wbg70Yw6QmeyeI99XhemzIdYuyJXEwZNIyVzNEzyBVFOmVwT42CLBS+4aTfAtQZqMRpssn2yJ/nXvCiFFJbdxkGiPvRpA0z+xUp4lPwpmbe12qNPMN51HQIhqjqX6Jfk9/4dhgeGLpU+VnJDbp/6/it78B3N3Kp7zxZ6nXSAP9U72dmma+SRcfTMWupbuAtQ8vIrdSRSlZC7o2cRF1T7TLD0nM6iqx9H+QAM5O9DeCGVlu4G7uzbKJDa8taPo18hC5il4NKlqi4q01pkNaIHnhJoupGmwQnLzjuur57G5oU0Mly7pWKn8VXY/prn/cIsEgCwjEV70EnCeSmeslij9eG1wFBZrMI3lVb22PDiXr+TjIqfTYUD379nH/th3I+3zL0KarsSAA3xDvNt4MeHeeH3kC1HwBMfNy8DnI9KNYgLlu6j/FG4R4WAd/U3DHIDfDkr0ew40GsXTy0wEAFn81IU9re0s9alOlbixOIdGYmGvMkyspAw6L6t3TOp99pI1O/8yfRTN2z1wDroo8TNhRnu/axbGXmsQqAl/sIuzRuA4C+M81hHyQdwHfz6ZyCpmeC1GHtVrm717RxQlVjoBytAUsry1jhUsfIF4SaaI2532ZMoigEifsRR5hz0mq6IoKsb8yB3Q/BKokbrE7fjRK3GkHH27gUDle5c=
         on:
           tags: true
 stages:
+  - name: test
+    if: tag IS NOT present
   - name: npm-bundle
     if: tag IS present
