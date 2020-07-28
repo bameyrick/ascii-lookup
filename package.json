@@ -7,19 +7,25 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
-    "lint": "tslint --project tsconfig.json",
+    "lint": "tslint --project tsconfig.lint.json",
     "test": "KARMA_SINGLE_RUN=false karma start ./karma.conf.js",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "lint-staged": {
     "*.ts": [
       "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma  es5 --parser typescript --write",
-      "tslint --project tsconfig.json",
+      "tslint --project tsconfig.lint.json",
       "karma start ./karma.conf.js",
       "git add"
     ],
-    "*.js": ["prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write", "git add"],
-    "*.json": ["prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write", "git add"]
+    "*.js": [
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write",
+      "git add"
+    ]
   },
   "husky": {
     "hooks": {
