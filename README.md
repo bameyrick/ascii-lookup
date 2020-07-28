@@ -2,6 +2,8 @@
 
 Get ASCII characters, html codes, hex codes, and decimal codes for different encodings via decimal code or hex code.
 
+[![GitHub release](https://img.shields.io/github/release/bameyrick/ascii-lookup.svg)](https://github.com/bameyrick/ascii-lookup/releases)
+[![Travis tests](https://img.shields.io/travis/bameyrick/ascii-lookup.svg)](https://travis-ci.org/bameyrick/ascii-lookup)
 [![codecov](https://codecov.io/gh/bameyrick/ascii-lookup/branch/master/graph/badge.svg)](https://codecov.io/gh/bameyrick/ascii-lookup)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/b270c171a65e4f2e81d87eff71d35f81)](https://www.codacy.com/manual/bameyrick/ascii-lookup)
 
