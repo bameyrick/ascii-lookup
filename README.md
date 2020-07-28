@@ -2,6 +2,9 @@
 
 Get ASCII characters, html codes, hex codes, and decimal codes for different encodings via decimal code or hex code.
 
+[![codecov](https://codecov.io/gh/bameyrick/ascii-lookup/branch/master/graph/badge.svg)](https://codecov.io/gh/bameyrick/ascii-lookup)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/b270c171a65e4f2e81d87eff71d35f81)](https://www.codacy.com/manual/bameyrick/ascii-lookup)
+
 ## Install
 
 You can install via npm or yarn.
