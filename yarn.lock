@@ -2063,9 +2063,9 @@ npm-run-path@^4.0.0:
     path-key "^3.0.0"
 
 number-array-from-range@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/number-array-from-range/-/number-array-from-range-1.0.0.tgz#c8dc4508b86abeb61e86765b3c721fa9b8021894"
-  integrity sha512-MHo8cJ4SSSCem+g8RDSB0reSA8JSHkxoEP0NxvQoAWQ/1JHnSfrPevImEVilt8nHpd5VGCXX5afO42T3mrlcyw==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/number-array-from-range/-/number-array-from-range-1.0.1.tgz#c0bc04e1156d455d420912f6055ae9e6f2bec16c"
+  integrity sha512-dUTaI6KHvXYxquqZ0Pouf3FSMOpqK9ggxetvgUUKxw75G9LTiEzngrWFbsuHMIFekS13TRgIpgpxuHlmUPgxHw==
 
 object-component@0.0.3:
   version "0.0.3"

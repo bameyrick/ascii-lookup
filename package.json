@@ -5,8 +5,22 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "description": "Get ASCII characters, html codes, hex codes, and decimal codes for different encodings via decimal code or hex code.",
+  "keywords": [
+    "ASCII",
+    "decimal",
+    "hex",
+    "html code",
+    "character",
+    "CP437",
+    "ISO",
+    "UTF-8",
+    "UTF8",
+    "table",
+    "lookup"
+  ],
   "scripts": {
-    "build": "yarn tidy-clean && yarn lint && tsc -p tsconfig.json --outDir dist/",
+    "build": "yarn lint && tsc -p tsconfig.json --outDir dist/",
     "lint": "yarn tidy-clean && yarn tslint --project tsconfig.lint.json",
     "test": "KARMA_SINGLE_RUN=false karma start ./karma.conf.js",
     "test-single": "yarn tidy-clean && yarn karma start ./karma.conf.js",
