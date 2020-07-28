@@ -9,6 +9,7 @@
     "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
     "lint": "tslint --project tsconfig.lint.json",
     "test": "KARMA_SINGLE_RUN=false karma start ./karma.conf.js",
+    "test-single": "karma start ./karma.conf.js",
     "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "lint-staged": {
