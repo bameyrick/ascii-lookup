@@ -17,16 +17,13 @@
     "*.ts": [
       "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma  es5 --parser typescript --write",
       "tslint --project tsconfig.lint.json",
-      "karma start ./karma.conf.js",
-      "git add"
+      "karma start ./karma.conf.js"
     ],
     "*.js": [
-      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write",
-      "git add"
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write"
     ],
     "*.json": [
-      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write",
-      "git add"
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write"
     ]
   },
   "husky": {
@@ -36,6 +33,7 @@
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
+    "codecov": "^3.7.2",
     "husky": "^4.2.5",
     "jasmine-core": "^3.6.0",
     "karma": "^5.1.0",
