@@ -13,6 +13,10 @@
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "tidy-clean": "rm -rf dist coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bameyrick/ascii-lookup.git"
+  },
   "lint-staged": {
     "*.ts": [
       "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma  es5 --parser typescript --write",
