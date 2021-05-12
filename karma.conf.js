@@ -19,6 +19,12 @@ module.exports = function (config) {
       require('karma-typescript'),
     ],
 
+    karmaTypescriptConfig: {
+      bundlerOptions: {
+        transforms: [require('karma-typescript-es6-transform')()],
+      },
+    },
+
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
